@@ -694,33 +694,6 @@
           btn.innerText = "Save & Complete Matrix";
       });
   };
-</script>
-<script>
-  const form = document.querySelector('form');
-  form.onsubmit = function(event) {
-      event.preventDefault(); // Detiene el salto de página automático
-      const btn = form.querySelector('.btn');
-      
-      btn.innerText = "Saving responses...";
-      btn.disabled = true;
-      
-      fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          mode: 'no-cors' // Evita bloqueos de seguridad del navegador
-      })
-      .then(() => {
-          alert('Thank you! Your responses have been successfully saved to Google Sheets.');
-          btn.innerText = "Save & Complete Matrix";
-          btn.disabled = false;
-          form.reset(); // Limpia el formulario para un nuevo registro
-      })
-      .catch(error => {
-          alert('Error saving data: ' + error);
-          btn.disabled = false;
-          btn.innerText = "Save & Complete Matrix";
-      });
-  };
-</script>
+
 </body>
 </html>
