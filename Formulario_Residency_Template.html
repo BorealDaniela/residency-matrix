@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residency Design Template Form</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --text-muted: #4a5568;
+            --border-color: #e2e8f0;
+            --input-focus: #ebf8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .instructions {
+            background-color: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: left;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .instructions strong {
+            color: #fc8181;
+        }
+
+        .reference-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .reference-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+            font-size: 13px;
+        }
+
+        .model-item {
+            background-color: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .model-item strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .form-section h2 {
+            color: var(--secondary-color);
+            font-size: 19px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-size: 15px;
+        }
+
+        .label-desc {
+            display: block;
+            font-weight: normal;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 8px;
+            background-color: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 2px solid #cbd5e1;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+            background-color: #fff;
+        }
+
+        input[type="text"]:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px var(--input-focus);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f8fafc;
+            padding: 10px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        .option-label:hover {
+            background-color: #edf2f7;
+        }
+
+        .option-label input {
+            margin-top: 4px;
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+
+        .inline-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .inline-group input[type="text"] {
+            flex: 1;
+        }
+
+        .submit-area {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        button[type="submit"] {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(43, 108, 176, 0.2);
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--primary-color);
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.98);
+        }
+
+        .validation-msg {
+            color: #e53e3e;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>RESIDENCY DESIGN TEMPLATE</h1>
+        <div class="instructions">
+            <strong>INSTRUCTIONS:</strong> Fill out the form online. Select multiple choices where applicable. All answers are automatically logged into the connected database.<br>
+            <strong>Deadline: Friday 19th June</strong>
+        </div>
+    </header>
+
+    <!-- Model Keys Reference Section -->
+    <div class="reference-section">
+        <h3>Model Keys Reference Guide</h3>
+        <div class="model-grid">
+            <div class="model-item"><strong>M1</strong> Completely based on supporting creation and creative exploration (with a final production as a result)</div>
+            <div class="model-item"><strong>M2</strong> Focused on exchange with local communities</div>
+            <div class="model-item"><strong>M3</strong> Oriented to managers and organizations</div>
+            <div class="model-item"><strong>M4</strong> Based on care practices for families</div>
+            <div class="model-item"><strong>M5</strong> Educational-training</div>
+            <div class="model-item"><strong>M6</strong> Governance - public policy</div>
+            <div class="model-item"><strong>M7</strong> Multicultural exchange</div>
+            <div class="model-item"><strong>M8</strong> Technical support</div>
+            <div class="model-item"><strong>M9</strong> Intersections between arts and other disciplines (science, technology, gastronomy, etc.)</div>
+            <div class="model-item"><strong>M10</strong> Focused on contact with nature and the development of sustainable practices</div>
+        </div>
+    </div>
+
+    <!-- MAIN FORM -->
+    <form id="residencyForm">
+        
+        <!-- Section 1: General Info -->
+        <div class="form-section">
+            <h2>General Information</h2>
+            
+            <div class="form-group">
+                <label for="organizationName">Organization Name *</label>
+                <input type="text" id="organizationName" name="organizationName" required placeholder="Type organization name...">
+            </div>
+
+            <div class="form-group">
+                <label for="programName">Residency Program Name *</label>
+                <input type="text" id="programName" name="programName" required placeholder="Type residency program name...">
+            </div>
+
+            <div class="form-group">
+                <label>Model Key (Select one) *</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="radio" name="modelKey" value="M1" required> M1</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M2"> M2</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M3"> M3</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M4"> M4</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M5"> M5</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M6"> M6</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M7"> M7</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M8"> M8</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M9"> M9</label>
+                    <label class="option-label"><input type="radio" name="modelKey" value="M10"> M10</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Purpose & Commitments -->
+        <div class="form-section">
+            <h2>Program Purpose & Commitments</h2>
+            
+            <div class="form-group">
+                <label for="programPurpose">Description of program main purpose (from organization perspective)</label>
+                <span class="label-desc">"State the social issue, territorial gap, or cultural opportunity that the residency will address. E.g. This residency will address [specific local issue] in [location], using artistic practice to support [goal]."</span>
+                <textarea id="programPurpose" name="programPurpose" placeholder="Type detailed main purpose here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="strategiesActions">Describe the specific strategies and actions that will be implemented to fulfill the purpose of this program</label>
+                <span class="label-desc">"Use the prompt guide presented in the matrix file to develop this section."</span>
+                <textarea id="strategiesActions" name="strategiesActions" placeholder="Type specific strategies and actions here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="inclusionCommitments">Commitments on accessibility, cohesion and inclusion</label>
+                <span class="label-desc">"To achieve our commitment to include 30% of people from vulnerable groups, we will implement the following internal policies [detail at least 4 policies to be implemented and specify the target groups]. We also commit to adapting our facilities as follows [name at least 3 and specify] and producing educational materials, guides, and translations in the following formats [name at least 3 and specify]."</span>
+                <textarea id="inclusionCommitments" name="inclusionCommitments" placeholder="Type accessibility, cohesion, and inclusion commitments here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="sustainabilityCommitments">Commitments on sustainability and environmental care</label>
+                <span class="label-desc">"The residency will operate under [ecological rules and green policies], and its methods will link artistic work with local sustainability practices."</span>
+                <textarea id="sustainabilityCommitments" name="sustainabilityCommitments" placeholder="Type sustainability and environmental commitments here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Section 3: Residency Framework Criteria -->
+        <div class="form-section">
+            <h2>Residency Framework Criteria</h2>
+
+            <!-- 1. Funding scheme & Budget -->
+            <div class="form-group">
+                <label>1. Funding scheme (Select all that apply)</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="fundingScheme" value="Public"> Public</label>
+                    <label class="option-label"><input type="checkbox" name="fundingScheme" value="Private"> Private</label>
+                    <label class="option-label"><input type="checkbox" name="fundingScheme" value="Mixed"> Mixed</label>
+                    <label class="option-label"><input type="checkbox" name="fundingScheme" value="EU"> EU</label>
+                    <label class="option-label"><input type="checkbox" name="fundingScheme" value="Self-funded"> Self-funded</label>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="budgetDetails" style="font-size: 14px;">Budget allocation / details:</label>
+                    <input type="text" id="budgetDetails" name="budgetDetails" placeholder="Specify budget allocation/details...">
+                </div>
+            </div>
+
+            <!-- 2. Objectives -->
+            <div class="form-group">
+                <label>2. Objectives (Select maximum 3)</label>
+                <div class="options-grid" id="objectivesGroup">
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Research / Exploration"> Research / Exploration</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Education & training"> Education & training</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Artistic Creation"> Artistic Creation</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Cultural exchange"> Cultural exchange</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Production"> Production</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Contact with nature & sustainability practices"> Contact with nature & sustainability practices</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Networking"> Networking</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Methodologies / tools development"> Methodologies / tools development</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Social impact"> Social impact</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Policy analysis & design"> Policy analysis & design</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Production and publication of educational and support materials"> Production and publication of educational and support materials</label>
+                    <label class="option-label"><input type="checkbox" name="objectives" value="Evaluation"> Evaluation</label>
+                </div>
+                <div class="validation-msg" id="objectivesValidation">You can select a maximum of 3 options.</div>
+                <div style="margin-top: 15px;">
+                    <label for="objectivesDescription" style="font-size: 14px;">Describe main objectives and goals:</label>
+                    <span class="label-desc">"Describe the main and secondary objectives that you wish to achieve with this residency program and what is the result and/or product to be developed."</span>
+                    <textarea id="objectivesDescription" name="objectivesDescription" placeholder="Type objectives description here..."></textarea>
+                </div>
+            </div>
+
+            <!-- 3. Artistic phase supported -->
+            <div class="form-group">
+                <label>3. Artistic phase supported (Select all that apply)</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="artisticPhase" value="Research"> Research</label>
+                    <label class="option-label"><input type="checkbox" name="artisticPhase" value="Development"> Development</label>
+                    <label class="option-label"><input type="checkbox" name="artisticPhase" value="Production"> Production</label>
+                </div>
+                <div class="inline-group">
+                    <label class="option-label" style="margin-top:0;"><input type="checkbox" name="artisticPhase" value="Other"> Other:</label>
+                    <input type="text" name="artisticPhaseOther" placeholder="Specify other phase...">
+                </div>
+            </div>
+
+            <!-- 4. Experience of residents -->
+            <div class="form-group">
+                <label>4. Experience of residents</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="residentExperience" value="First-time"> First-time</label>
+                    <label class="option-label"><input type="checkbox" name="residentExperience" value="Experienced"> Experienced</label>
+                </div>
+            </div>
+
+            <!-- 5. Duration -->
+            <div class="form-group">
+                <label>5. Duration</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="durationCategory" value="Short"> Short</label>
+                    <label class="option-label"><input type="checkbox" name="durationCategory" value="Medium"> Medium</label>
+                    <label class="option-label"><input type="checkbox" name="durationCategory" value="Long-term"> Long-term</label>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="durationSpecifics" style="font-size: 14px;">Duration in weeks/days:</label>
+                    <span class="label-desc">"According of the model and purposse, suitable for meeting the program objectives."</span>
+                    <input type="text" id="durationSpecifics" name="durationSpecifics" placeholder="Type specified duration here...">
+                </div>
+            </div>
+
+            <!-- 6. Geographical context -->
+            <div class="form-group">
+                <label>6. Geographical context</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="geoContext" value="Urban"> Urban</label>
+                    <label class="option-label"><input type="checkbox" name="geoContext" value="Rural"> Rural</label>
+                    <label class="option-label"><input type="checkbox" name="geoContext" value="Peripheral"> Peripheral</label>
+                    <label class="option-label"><input type="checkbox" name="geoContext" value="Multi-site"> Multi-site</label>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="geoContextDesc" style="font-size: 14px;">Briefly describe location, territory and geographical context:</label>
+                    <span class="label-desc">"Describe the territory, sorroundings, neighborhood and social context."</span>
+                    <textarea id="geoContextDesc" name="geoContextDesc" placeholder="Type context description here..."></textarea>
+                </div>
+            </div>
+
+            <!-- 7. Relation to territory/community -->
+            <div class="form-group">
+                <label>7. Relation to territory/community (0 none &rarr; 5 co-creation)</label>
+                <div class="options-grid" style="grid-template-columns: repeat(6, 1fr);">
+                    <label class="option-label" style="justify-content: center;"><input type="radio" name="communityRelationScore" value="0"> 0</label>
+                    <label class="option-label" style="justify-content: center;"><input type="radio" name="communityRelationScore" value="1"> 1</label>
+                    <label class="option-label" style="justify-content: center;"><input type="radio" name="communityRelationScore" value="2"> 2</label>
+                    <label class="option-label" style="justify-content: center;"><input type="radio" name="communityRelationScore" value="3"> 3</label>
+                    <label class="option-label" style="justify-content: center;"><input type="radio" name="communityRelationScore" value="4"> 4</label>
+                    <label class="option-label" style="justify-content: center;"><input type="radio" name="communityRelationScore" value="5"> 5</label>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="communityRelationDesc" style="font-size: 14px;">Describe:</label>
+                    <span class="label-desc">"Describe how this residency promotes and applies contact and exchange with the local community and territory."</span>
+                    <textarea id="communityRelationDesc" name="communityRelationDesc" placeholder="Type relationship and community engagement description here..."></textarea>
+                </div>
+            </div>
+
+            <!-- 8. Selection model -->
+            <div class="form-group">
+                <label>8. Selection model</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="selectionModel" value="Open call"> Open call</label>
+                    <label class="option-label"><input type="checkbox" name="selectionModel" value="Invitation"> Invitation</label>
+                    <label class="option-label"><input type="checkbox" name="selectionModel" value="Curated"> Curated</label>
+                    <label class="option-label"><input type="checkbox" name="selectionModel" value="Other"> Other</label>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="selectionCriteria" style="font-size: 14px;">Criteria:</label>
+                    <span class="label-desc">"What are the criteria used to select residents and how do these relate to achieving the main objective?"</span>
+                    <textarea id="selectionCriteria" name="selectionCriteria" placeholder="Type residency selection criteria here..."></textarea>
+                </div>
+            </div>
+
+            <!-- 9. Target participants (when professionals) -->
+            <div class="form-group">
+                <label>9. Target participants (when professionals)</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="targetProfessionals" value="Emerging"> Emerging</label>
+                    <label class="option-label"><input type="checkbox" name="targetProfessionals" value="Mid-career"> Mid-career</label>
+                    <label class="option-label"><input type="checkbox" name="targetProfessionals" value="Established and senior practitioner"> Established & senior practitioner</label>
+                </div>
+            </div>
+
+            <!-- 10. Target participants (for age range) -->
+            <div class="form-group">
+                <label>10. Target participants (for age range)</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="targetAges" value="Children"> Children</label>
+                    <label class="option-label"><input type="checkbox" name="targetAges" value="Adolescents"> Adolescents</label>
+                    <label class="option-label"><input type="checkbox" name="targetAges" value="Youth"> Youth</label>
+                    <label class="option-label"><input type="checkbox" name="targetAges" value="Adults"> Adults</label>
+                    <label class="option-label"><input type="checkbox" name="targetAges" value="Elderly people"> Elderly people</label>
+                    <label class="option-label"><input type="checkbox" name="targetAges" value="Inter-generational"> Inter-generational</label>
+                </div>
+            </div>
+
+            <!-- 11. Target participants (specific communities) -->
+            <div class="form-group">
+                <label>11. Target participants (specific communities)</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="targetCommunities" value="Indigenous & first nations"> Indigenous & first nations</label>
+                    <label class="option-label"><input type="checkbox" name="targetCommunities" value="Farmers"> Farmers</label>
+                    <label class="option-label"><input type="checkbox" name="targetCommunities" value="Physical disabilities"> Physical disabilities</label>
+                    <label class="option-label"><input type="checkbox" name="targetCommunities" value="Gender and sexual diversities"> Gender & sexual diversities</label>
+                    <label class="option-label"><input type="checkbox" name="targetCommunities" value="Global south"> Global south</label>
+                    <label class="option-label"><input type="checkbox" name="targetCommunities" value="Neurodiversities"> Neurodiversities</label>
+                </div>
+            </div>
+
+            <!-- 12. Other targeted participants -->
+            <div class="form-group">
+                <label for="otherTargeted">12. Other targeted participants</label>
+                <span class="label-desc">"Specify if this residency program is aimed at other specific communities"</span>
+                <textarea id="otherTargeted" name="otherTargeted" placeholder="Type other targeted communities here, if applicable..."></textarea>
+            </div>
+
+            <!-- 13. Infrastructure provided -->
+            <div class="form-group">
+                <label>13. Infrastructure provided</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="infrastructure" value="Studios / Rehearsal room"> Studios / Rehearsal room</label>
+                    <label class="option-label"><input type="checkbox" name="infrastructure" value="Kitchen / Laundry"> Kitchen / Laundry</label>
+                    <label class="option-label"><input type="checkbox" name="infrastructure" value="Housing / Accommodation"> Housing / Accommodation</label>
+                    <label class="option-label"><input type="checkbox" name="infrastructure" value="Office"> Office</label>
+                    <label class="option-label"><input type="checkbox" name="infrastructure" value="Technical support"> Technical support</label>
+                    <label class="option-label"><input type="checkbox" name="infrastructure" value="Outdoor spaces"> Outdoor spaces</label>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="infrastructureDesc" style="font-size: 14px;">Description of spaces (specifications):</label>
+                    <span class="label-desc">"Describe spaces and their accessibility (cohesion) adaptation, also if they are children safe and other important specifications."</span>
+                    <textarea id="infrastructureDesc" name="infrastructureDesc" placeholder="Type infrastructure technical specifications and details here..."></textarea>
+                </div>
+            </div>
+
+            <!-- 14. Financial conditions -->
+            <div class="form-group">
+                <label>14. Financial conditions</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="financialConditions" value="Fees"> Fees</label>
+                    <label class="option-label"><input type="checkbox" name="financialConditions" value="Grants"> Grants</label>
+                    <label class="option-label"><input type="checkbox" name="financialConditions" value="Per diem"> Per diem</label>
+                    <label class="option-label"><input type="checkbox" name="financialConditions" value="No funding"> No funding</label>
+                    <label class="option-label"><input type="checkbox" name="financialConditions" value="Others"> Others</label>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="financialAmounts" style="font-size: 14px;">Amounts:</label>
+                    <input type="text" id="financialAmounts" name="financialAmounts" placeholder="Specify amounts and currency conditions...">
+                </div>
+            </div>
+
+            <!-- 15. Output requirements -->
+            <div class="form-group">
+                <label>15. Output requirements</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="outputRequirements" value="None"> None</label>
+                    <label class="option-label"><input type="checkbox" name="outputRequirements" value="Work in progress / Open studio"> Work in progress / Open studio</label>
+                    <label class="option-label"><input type="checkbox" name="outputRequirements" value="Performance"> Performance</label>
+                    <label class="option-label"><input type="checkbox" name="outputRequirements" value="Workshop"> Workshop</label>
+                </div>
+                <div class="inline-group">
+                    <label class="option-label" style="margin-top:0;"><input type="checkbox" name="outputRequirements" value="Others"> Others:</label>
+                    <input type="text" name="outputRequirementsOther" placeholder="Specify other requirements...">
+                </div>
+            </div>
+
+            <!-- 16. Network dimension -->
+            <div class="form-group">
+                <label>16. Network dimension</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="networkDimension" value="Single host"> Single host</label>
+                    <label class="option-label"><input type="checkbox" name="networkDimension" value="Multi host"> Multi host</label>
+                    <label class="option-label"><input type="checkbox" name="networkDimension" value="Festival"> Festival</label>
+                    <label class="option-label"><input type="checkbox" name="networkDimension" value="International"> International</label>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="nameHosts" style="font-size: 14px;">Name hosts:</label>
+                    <input type="text" id="nameHosts" name="nameHosts" placeholder="Name hosts...">
+                </div>
+                <div style="margin-top: 15px;">
+                    <label style="font-size: 14px;">Number of countries, cities, regions, places involved:</label>
+                    <div class="options-grid">
+                        <label class="option-label"><input type="checkbox" name="geographicScope" value="International"> International</label>
+                        <label class="option-label"><input type="checkbox" name="geographicScope" value="National"> National</label>
+                        <label class="option-label"><input type="checkbox" name="geographicScope" value="Local"> Local</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17. Social orientation -->
+            <div class="form-group">
+                <label>17. Social orientation (Select all that apply)</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Creation and creative exploration"> Creation and creative exploration</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Contact with nature and sustainable practices"> Contact with nature & sustainable practices</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Exchange with local communities"> Exchange with local communities</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Oriented to managers and organizations"> Oriented to managers & organizations</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Intersections between arts and other disciplines"> Intersections between arts & other disciplines</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Multiculturality"> Multiculturality</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Technical support"> Technical support</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Governance - public policy"> Governance - public policy</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Multicultural exchange"> Multicultural exchange</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Care practices for families"> Care practices for families</label>
+                    <label class="option-label"><input type="checkbox" name="socialOrientation" value="Education / Training"> Education / Training</label>
+                </div>
+            </div>
+
+            <!-- 18. Scale -->
+            <div class="form-group">
+                <label>18. Scale</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="scale" value="Individual"> Individual</label>
+                    <label class="option-label"><input type="checkbox" name="scale" value="Group / Collective / Family"> Group / Collective / Family</label>
+                    <label class="option-label"><input type="checkbox" name="scale" value="Established company / Organization"> Established company / Organization</label>
+                </div>
+            </div>
+
+            <!-- 19. Genre / Discipline -->
+            <div class="form-group">
+                <label>19. Genre / Discipline</label>
+                <div class="options-grid">
+                    <label class="option-label"><input type="checkbox" name="genreDiscipline" value="Theatre"> Theatre</label>
+                    <label class="option-label"><input type="checkbox" name="genreDiscipline" value="Dance"> Dance</label>
+                    <label class="option-label"><input type="checkbox" name="genreDiscipline" value="Circus"> Circus</label>
+                    <label class="option-label"><input type="checkbox" name="genreDiscipline" value="Puppets / Objects"> Puppets / Objects</label>
+                    <label class="option-label"><input type="checkbox" name="genreDiscipline" value="Performance"> Performance</label>
+                    <label class="option-label"><input type="checkbox" name="genreDiscipline" value="Interdisciplinary"> Interdisciplinary</label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-area">
+            <button type="submit" id="submitBtn">Submit Template</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Enforce max 3 choices rule for Objectives Section
+    const objectivesCheckboxes = document.querySelectorAll('input[name="objectives"]');
+    const validationMsg = document.getElementById('objectivesValidation');
+
+    objectivesCheckboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+            const checkedCount = document.querySelectorAll('input[name="objectives"]:checked').length;
+            if (checkedCount > 3) {
+                cb.checked = false;
+                validationMsg.style.display = 'block';
+            } else {
+                validationMsg.style.display = 'none';
+            }
+        });
+    });
+
+    // Handle form submission and link to Google Sheets
+    document.getElementById('residencyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Sending...';
+
+        // Extract and format multi-select fields (join with commas)
+        const formData = new FormData(this);
+        const dataObject = {};
+
+        // Helper to collect all checkboxes with same name as comma separated string
+        const multiFields = [
+            'fundingScheme', 'objectives', 'artisticPhase', 'residentExperience', 
+            'durationCategory', 'geoContext', 'selectionModel', 'targetProfessionals', 
+            'targetAges', 'targetCommunities', 'infrastructure', 'financialConditions', 
+            'outputRequirements', 'networkDimension', 'geographicScope', 'socialOrientation', 
+            'scale', 'genreDiscipline'
+        ];
+
+        // Primary normal inputs
+        formData.forEach((value, key) => {
+            if (!multiFields.includes(key)) {
+                dataObject[key] = value;
+            }
+        });
+
+        // Combined multi-select lists
+        multiFields.forEach(field => {
+            const checkedValues = Array.from(document.querySelectorAll(`input[name="${field}"]:checked`)).map(el => el.value);
+            dataObject[field] = checkedValues.join(', ');
+        });
+
+        // TIMESTAMP
+        dataObject['timestamp'] = new Date().toISOString();
+
+        /*
+        👉 INSTRUCTIONS FOR GOOGLE SHEETS AUTOMATION:
+        To connect this directly to Google Sheets, deploy a Google Apps Script as a Web App:
+        
+        1. Open your Google Sheet.
+        2. Click Extensions > Apps Script.
+        3. Paste the following Code.gs:
+           
+           function doPost(e) {
+             var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+             var data = JSON.parse(e.postData.contents);
+             
+             // Define headers alignment to matching form object keys
+             var headers = [
+               "timestamp", "organizationName", "programName", "modelKey", "programPurpose", 
+               "strategiesActions", "inclusionCommitments", "sustainabilityCommitments", 
+               "fundingScheme", "budgetDetails", "objectives", "objectivesDescription", 
+               "artisticPhase", "artisticPhaseOther", "residentExperience", "durationCategory", 
+               "durationSpecifics", "geoContext", "geoContextDesc", "communityRelationScore", 
+               "communityRelationDesc", "selectionModel", "selectionCriteria", "targetProfessionals", 
+               "targetAges", "targetCommunities", "otherTargeted", "infrastructure", 
+               "infrastructureDesc", "financialConditions", "financialAmounts", "outputRequirements", 
+               "outputRequirementsOther", "networkDimension", "nameHosts", "geographicScope", 
+               "socialOrientation", "scale", "genreDiscipline"
+             ];
+             
+             // If sheet is empty, write headers
+             if (sheet.getLastRow() === 0) {
+               sheet.appendRow(headers);
+             }
+             
+             var row = headers.map(function(key) { return data[key] || ""; });
+             sheet.appendRow(row);
+             
+             return ContentService.createTextOutput(JSON.stringify({"result": "success"}))
+                                  .setMimeType(ContentService.MimeType.JSON);
+           }
+
+        4. Click Deploy > New Deployment. Select "Web App".
+        5. Set Execute as: "Me", Who has access: "Anyone".
+        6. Copy the Web App URL and paste it below into the `WEB_APP_URL` variable.
+        */
+
+        const WEB_APP_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE"; 
+
+        if (WEB_APP_URL === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE") {
+            alert("Local Save Simulated! To activate real Google Sheet logging, please configure the WEB_APP_URL variable inside the HTML script tags.\n\nData collected:\n" + JSON.stringify(dataObject, null, 2));
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Submit Template';
+            return;
+        }
+
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            mode: 'no-cors', // standard way for Apps Script Web App standard triggers
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataObject)
+        })
+        .then(response => {
+            alert('Form submitted successfully and saved to Google Sheets!');
+            document.getElementById('residencyForm').reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Submission failed. Check your Web App configuration.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Submit Template';
+        });
+    });
+</script>
+
+</body>
+</html>
