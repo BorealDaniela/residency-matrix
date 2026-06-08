@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,21 +38,21 @@
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 30px;
+            padding: 35px;
             border-radius: 12px;
             margin-bottom: 30px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 24px;
+            font-size: 26px;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         header p {
-            font-size: 14px;
+            font-size: 15px;
             opacity: 0.9;
         }
 
@@ -85,9 +84,7 @@
             margin-bottom: 20px;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-weight: 700;
         }
 
         .form-group {
@@ -143,7 +140,7 @@
             background-color: #f8fafc;
             padding: 15px;
             border-radius: 8px;
-            border: 1px dashed var(--border-color);
+            border: 1px solid var(--border-color);
         }
 
         .checkbox-label, .radio-label {
@@ -246,7 +243,8 @@
 <body>
 
 <div class="container">
-    <form action="https://script.google.com/macros/s/AKfycbyLwI1pa_jQRFoEpOyYuDaaHTJWqIslyYuuiUjbIcJCpChxM67cJNpzchqZIt_3TJc8/exec" method="POST">
+    <!-- REPLACE THE URL INSIDE action="" WITH YOUR GOOGLE APPS SCRIPT WEB APP URL -->
+    <form action="YOUR_GOOGLE_APPS_SCRIPT_URL_HERE" method="POST">
         
         <header>
             <h1>Social Ecosystem of Residencies Matrix</h1>
@@ -254,25 +252,25 @@
         </header>
 
         <div class="instructions-panel">
-            <strong>INSTRUCTIONS:</strong> Download or make a copy of this file before you start. Fill in the blanks and select the appropriate checkboxes and radio buttons that best match your residency program framework.
+            <strong>INSTRUCTIONS:</strong> Download or make a copy of this file before you start. Fill in the blanks and select the options that apply.
         </div>
 
-        <!-- SECTION 1: IDENTIFICATION -->
+        <!-- SECTION 1: GENERAL INFORMATION -->
         <div class="card">
             <div class="card-title">SECTION 1: General Information</div>
             <div class="grid-2">
                 <div class="form-group">
-                    <label for="org_name">Organization Name</label>
+                    <label for="org_name">Organization Name:</label>
                     <input type="text" id="org_name" name="org_name" placeholder="Type organization name here...">
                 </div>
                 <div class="form-group">
-                    <label for="program_name">Residency Program Name</label>
+                    <label for="program_name">Residency Program Name:</label>
                     <input type="text" id="program_name" name="program_name" placeholder="Type program name here...">
                 </div>
             </div>
 
             <div class="form-group" style="margin-top: 15px;">
-                <label>Model Key (Select ONE option that best fits your program)</label>
+                <label>Model Key (Select one):</label>
                 <div class="model-key-container">
                     <div class="model-option">
                         <label class="radio-label">
@@ -338,31 +336,31 @@
             </div>
         </div>
 
-        <!-- SECTION 2: PURPOSE & OBJECTIVES -->
+        <!-- SECTION 2: PURPOSE, STRATEGIES & OBJECTIVES -->
         <div class="card">
             <div class="card-title">SECTION 2: Purpose, Accessibility & Objectives</div>
             
             <div class="form-group">
-                <label for="program_purpose">Description of Program Main Purpose (From Organization Perspective)</label>
-                <div class="help-text">State the social issue, territorial gap, or cultural opportunity that the residency will address. E.g., "This residency will address [specific local issue] in [location], using artistic practice to support [goal]."</div>
+                <label for="program_purpose">Description of program main purpose (from organization perspective):</label>
+                <div class="help-text">State the social issue, territorial gap, or cultural opportunity that the residency will address. E.g. This residency will address [specific local issue] in [location], using artistic practice to support [goal].</div>
                 <textarea id="program_purpose" name="program_purpose" rows="3" placeholder="Type your program purpose here..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label for="program_strategies">Describe the specific strategies and actions that will be implemented to fulfill the purpose of this program.</label>
-                <div class="help-text">Use the prompt guide presented in the matrix file to develop this section. (Select those that apply from the file).</div>
-                <textarea id="program_strategies" name="program_strategies" rows="4" placeholder="Type strategies and actions..."></textarea>
             </div>
 
             <div class="form-group">
-                <label for="commitments">Commitments on Accessibility, Cohesion, and Inclusion</label>
+                <label for="program_strategies">Describe the specific strategies and actions [select those that apply from the file] that will be implemented to fulfill the purpose of this program:</label>
+                <div class="help-text">Use the prompt guide presented in the matrix file to develop this section.</div>
+                <textarea id="program_strategies" name="program_strategies" rows="3" placeholder="Type strategies and actions here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="commitments">Commitments on accessibility, cohesion and inclusion:</label>
                 <div class="help-text">To achieve our commitment to include 30% of people from vulnerable groups, we will implement the following internal policies [detail at least 4 policies to be implemented and specify the target groups]. We also commit to adapting our facilities as follows [name at least 3 and specify] and producing educational materials, guides, and translations in the following formats [name at least 3 and specify].</div>
                 <textarea id="commitments" name="commitments" rows="4" placeholder="Type your commitments and inclusion policies here..."></textarea>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label>1. Funding Scheme</label>
+                    <label>1. Funding scheme:</label>
                     <div class="options-group grid-3">
                         <label class="checkbox-label"><input type="checkbox" name="funding" value="Public"> Public</label>
                         <label class="checkbox-label"><input type="checkbox" name="funding" value="Private"> Private</label>
@@ -372,37 +370,37 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="budget">Budget</label>
-                    <input type="text" id="budget" name="budget" placeholder="Specify currency and total budget amount...">
+                    <label for="budget">Budget:</label>
+                    <input type="text" id="budget" name="budget" placeholder="Specify currency and budget details...">
                 </div>
             </div>
 
             <div class="form-group">
-                <label>2. Objectives (Select MAXIMUM 3 options)</label>
+                <label>2. Objectives (select maximum 3):</label>
                 <div class="options-group grid-2">
                     <div>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Research"> Research / Exploration</label>
+                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Research / Exploration"> Research / Exploration</label>
                         <label class="checkbox-label"><input type="checkbox" name="objectives" value="Artistic Creation"> Artistic Creation</label>
                         <label class="checkbox-label"><input type="checkbox" name="objectives" value="Production"> Production</label>
                         <label class="checkbox-label"><input type="checkbox" name="objectives" value="Networking"> Networking</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Social Impact"> Social Impact</label>
+                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Social impact"> Social impact</label>
                         <label class="checkbox-label"><input type="checkbox" name="objectives" value="Evaluation"> Evaluation</label>
                     </div>
                     <div>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Educational materials"> Production & publication of educational materials</label>
+                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Production and publication of materials"> Production and publication of educational and support materials</label>
                         <label class="checkbox-label"><input type="checkbox" name="objectives" value="Education & training"> Education & training</label>
                         <label class="checkbox-label"><input type="checkbox" name="objectives" value="Cultural exchange"> Cultural exchange</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Nature & sustainability"> Contact with nature & sustainability practices</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Methodologies"> Methodologies / tools development</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Policy analysis"> Policy analysis & design</label>
+                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Contact with nature & sustainability"> Contact with nature & sustainability practices</label>
+                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Methodologies / tools development"> Methodologies / tools development</label>
+                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Policy analysis & design"> Policy analysis & design</label>
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="objectives_description">Describe Main Objectives and Goals</label>
+                <label for="objectives_description">Describe main objectives and goals:</label>
                 <div class="help-text">Describe the main and secondary objectives that you wish to achieve with this residency program and what is the result and/or product to be developed.</div>
-                <textarea id="objectives_description" name="objectives_description" rows="3" placeholder="Type objectives and final outcomes here..."></textarea>
+                <textarea id="objectives_description" name="objectives_description" rows="3" placeholder="Type objectives and outcomes details here..."></textarea>
             </div>
         </div>
 
@@ -412,7 +410,7 @@
             
             <div class="grid-2">
                 <div class="form-group">
-                    <label>3. Artistic Phase Supported</label>
+                    <label>3. Artistic phase supported:</label>
                     <div class="options-group grid-2">
                         <label class="checkbox-label"><input type="checkbox" name="phase" value="Research"> Research</label>
                         <label class="checkbox-label"><input type="checkbox" name="phase" value="Development"> Development</label>
@@ -422,7 +420,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>4. Experience of Residents</label>
+                    <label>4. Experience of residents:</label>
                     <div class="options-group grid-2">
                         <label class="checkbox-label"><input type="checkbox" name="experience" value="First-time"> First-time</label>
                         <label class="checkbox-label"><input type="checkbox" name="experience" value="Experienced"> Experienced</label>
@@ -432,7 +430,7 @@
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label>5. Duration</label>
+                    <label>5. Duration:</label>
                     <div class="options-group grid-3">
                         <label class="radio-label"><input type="radio" name="duration_type" value="Short"> Short</label>
                         <label class="radio-label"><input type="radio" name="duration_type" value="Medium"> Medium</label>
@@ -440,15 +438,15 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="duration_detail">Duration in Weeks / Days</label>
-                    <div class="help-text">According to the model and purpose, suitable for meeting the program objectives.</div>
-                    <input type="text" id="duration_detail" name="duration_detail" placeholder="e.g., 4 weeks / 30 days">
+                    <label for="duration_detail">Duration in weeks/days:</label>
+                    <div class="help-text">According of the model and purpose, suitable for meeting the program objectives.</div>
+                    <input type="text" id="duration_detail" name="duration_detail" placeholder="e.g., 3 weeks, 2 months...">
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label>6. Geographical Context</label>
+                    <label>6. Geographical context:</label>
                     <div class="options-group grid-2">
                         <label class="checkbox-label"><input type="checkbox" name="geo" value="Urban"> Urban</label>
                         <label class="checkbox-label"><input type="checkbox" name="geo" value="Rural"> Rural</label>
@@ -457,15 +455,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="geo_detail">Briefly describe location, territory and geographical context</label>
-                    <div class="help-text">Describe the territory, surroundings, neighborhood, and social context.</div>
-                    <textarea id="geo_detail" name="geo_detail" rows="2" placeholder="Describe the physical/social location context here..."></textarea>
+                    <label for="geo_detail">Briefly describe location, territory and geographical context:</label>
+                    <div class="help-text">Describe the territory, surroundings, neighborhood and social context.</div>
+                    <textarea id="geo_detail" name="geo_detail" rows="2" placeholder="Type territory and neighborhood context here..."></textarea>
                 </div>
             </div>
 
             <div class="form-group">
-                <label>7. Relation to Territory/Community</label>
-                <div class="help-text">Select rating from 0 (None) to 5 (Co-creation) and describe how this residency promotes contact and exchange.</div>
+                <label>7. Relation to territory/community (0 none → 5 co-creation):</label>
                 <div class="range-container">
                     <label class="radio-label range-item"><input type="radio" name="community_rel" value="0"><span>0 (None)</span></label>
                     <label class="radio-label range-item"><input type="radio" name="community_rel" value="1"><span>1</span></label>
@@ -474,12 +471,17 @@
                     <label class="radio-label range-item"><input type="radio" name="community_rel" value="4"><span>4</span></label>
                     <label class="radio-label range-item"><input type="radio" name="community_rel" value="5"><span>5 (Co-creation)</span></label>
                 </div>
-                <textarea id="community_detail" name="community_detail" rows="2" style="margin-top:12px;" placeholder="Describe community interaction methodologies here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="community_detail">Describe:</label>
+                <div class="help-text">Describe how this residency promotes and applies contact and exchange with the local community and territory.</div>
+                <textarea id="community_detail" name="community_detail" rows="2" placeholder="Type community exchange description here..."></textarea>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label>8. Selection Model</label>
+                    <label>8. Selection model:</label>
                     <div class="options-group grid-2">
                         <label class="checkbox-label"><input type="checkbox" name="selection" value="Open call"> Open call</label>
                         <label class="checkbox-label"><input type="checkbox" name="selection" value="Invitation"> Invitation</label>
@@ -488,9 +490,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="selection_criteria">Criteria</label>
+                    <label for="selection_criteria">Criteria:</label>
                     <div class="help-text">What are the criteria used to select residents and how do these relate to achieving the main objective?</div>
-                    <textarea id="selection_criteria" name="selection_criteria" rows="2" placeholder="Specify core selection criteria here..."></textarea>
+                    <textarea id="selection_criteria" name="selection_criteria" rows="2" placeholder="Type core selection criteria here..."></textarea>
                 </div>
             </div>
         </div>
@@ -501,7 +503,7 @@
             
             <div class="grid-2">
                 <div class="form-group">
-                    <label>9. Target Participants (when professionals)</label>
+                    <label>9. Target participants (when professionals):</label>
                     <div class="options-group">
                         <label class="checkbox-label"><input type="checkbox" name="profile" value="Emerging"> Emerging</label>
                         <label class="checkbox-label"><input type="checkbox" name="profile" value="Mid-career"> Mid-career</label>
@@ -510,13 +512,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label>10. Target Participants (for age range)</label>
+                    <label>10. Target participants (for age range):</label>
                     <div class="options-group grid-2">
                         <label class="checkbox-label"><input type="checkbox" name="age" value="Children"> Children</label>
                         <label class="checkbox-label"><input type="checkbox" name="age" value="Adolescents"> Adolescents</label>
                         <label class="checkbox-label"><input type="checkbox" name="age" value="Youth"> Youth</label>
                         <label class="checkbox-label"><input type="checkbox" name="age" value="Adults"> Adults</label>
-                        <label class="checkbox-label"><input type="checkbox" name="age" value="Elderly"> Elderly people</label>
+                        <label class="checkbox-label"><input type="checkbox" name="age" value="Elderly people"> Elderly people</label>
                         <label class="checkbox-label"><input type="checkbox" name="age" value="Inter-generational"> Inter-generational</label>
                     </div>
                 </div>
@@ -524,49 +526,49 @@
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label>11. Target Participants (specific communities)</label>
+                    <label>11. Target participants (specific communities):</label>
                     <div class="options-group">
-                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Indigenous"> Indigenous & first nations</label>
+                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Indigenous & first nations"> Indigenous & first nations</label>
                         <label class="checkbox-label"><input type="checkbox" name="communities" value="Farmers"> Farmers</label>
                         <label class="checkbox-label"><input type="checkbox" name="communities" value="Physical disabilities"> Physical disabilities</label>
-                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Gender/Sexual diversities"> Gender and sexual diversities</label>
+                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Gender and sexual diversities"> Gender and sexual diversities</label>
                         <label class="checkbox-label"><input type="checkbox" name="communities" value="Neurodiversities"> Neurodiversities</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="other_participants">12. Other Targeted Participants</label>
+                    <label for="other_participants">12. Other targeted participants:</label>
                     <div class="help-text">Specify if this residency program is aimed at other specific communities.</div>
-                    <textarea id="other_participants" name="other_participants" rows="4" placeholder="List any other target specific communities here..."></textarea>
+                    <textarea id="other_participants" name="other_participants" rows="3" placeholder="List any other target communities here..."></textarea>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 5: INFRASTRUCTURE & LOGISTICS -->
+        <!-- SECTION 5: INFRASTRUCTURE, LOGISTICS & DIMENSIONS -->
         <div class="card">
             <div class="card-title">SECTION 5: Infrastructure, Logistics & Scope</div>
             
             <div class="grid-2">
                 <div class="form-group">
-                    <label>13. Infrastructure Provided</label>
+                    <label>13. Infrastructure provided:</label>
                     <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Studios"> Studios / Rehearsal room</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Kitchen"> Kitchen / Laundry</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Housing"> Housing / Accomodation</label>
+                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Studios / Rehearsal room"> Studios / Rehearsal room</label>
+                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Kitchen / Laundry"> Kitchen / Laundry</label>
+                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Housing / Accomodation"> Housing / Accommodation</label>
                         <label class="checkbox-label"><input type="checkbox" name="infra" value="Office"> Office</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Technical"> Technical support</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Outdoor"> Outdoor spaces</label>
+                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Technical support"> Technical support</label>
+                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Outdoor spaces"> Outdoor spaces</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="spaces_detail">Description of spaces (specifications)</label>
-                    <div class="help-text">Describe spaces and their accesibility (cohesion) adaptation, also if they are children safe and other important specifications.</div>
-                    <textarea id="spaces_detail" name="spaces_detail" rows="4" placeholder="Type space specifications and safety features here..."></textarea>
+                    <label for="spaces_detail">Description of spaces (specifications):</label>
+                    <div class="help-text">Describe spaces and their accessibility (cohesion) adaptation, also if they are children safe and other important specifications.</div>
+                    <textarea id="spaces_detail" name="spaces_detail" rows="4" placeholder="Type spatial technicalities and safety elements here..."></textarea>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label>14. Financial Conditions</label>
+                    <label>14. Financial conditions:</label>
                     <div class="options-group grid-2">
                         <label class="checkbox-label"><input type="checkbox" name="finance" value="Fees"> Fees</label>
                         <label class="checkbox-label"><input type="checkbox" name="finance" value="Grants"> Grants</label>
@@ -576,24 +578,25 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="amounts_detail">Amounts</label>
-                    <input type="text" id="amounts_detail" name="amounts_detail" placeholder="Specify amounts...">
+                    <label for="amounts_detail">Amounts:</label>
+                    <input type="text" id="amounts_detail" name="amounts_detail" placeholder="Specify amounts, stypends, allocations...">
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label>15. Output Requirements</label>
-                    <div class="options-group">
-                        <label class="checkbox-label"><input type="checkbox" name="outputs" value="WIP"> Work in progress / Open studio</label>
+                    <label>15. Output requirements:</label>
+                    <div class="options-group grid-2">
+                        <label class="checkbox-label"><input type="checkbox" name="outputs" value="None"> None</label>
+                        <label class="checkbox-label"><input type="checkbox" name="outputs" value="Work in progress / Open studio"> Work in progress / Open studio</label>
                         <label class="checkbox-label"><input type="checkbox" name="outputs" value="Performance"> Performance</label>
                         <label class="checkbox-label"><input type="checkbox" name="outputs" value="Workshop"> Workshop</label>
                         <label class="checkbox-label"><input type="checkbox" name="outputs" value="Others"> Others</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>16. Network Dimension</label>
-                    <div class="options-group">
+                    <label>16. Network dimension:</label>
+                    <div class="options-group grid-2">
                         <label class="checkbox-label"><input type="checkbox" name="network" value="Single host"> Single host</label>
                         <label class="checkbox-label"><input type="checkbox" name="network" value="Multi host"> Multi host</label>
                         <label class="checkbox-label"><input type="checkbox" name="network" value="Festival"> Festival</label>
@@ -604,8 +607,8 @@
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label for="hosts_name">Name hosts</label>
-                    <input type="text" id="hosts_name" name="hosts_name" placeholder="List partner host organizations...">
+                    <label for="hosts_name">Name hosts:</label>
+                    <input type="text" id="hosts_name" name="hosts_name" placeholder="List partner hosts or single host names...">
                 </div>
                 <div class="form-group">
                     <label>Number of countries, cities, regions, places involved:</label>
@@ -614,47 +617,46 @@
                         <label class="checkbox-label"><input type="checkbox" name="scope" value="National"> National</label>
                         <label class="checkbox-label"><input type="checkbox" name="scope" value="Local"> Local</label>
                     </div>
-                    <textarea id="scope_places" name="scope_places" rows="2" style="margin-top: 10px;" placeholder="Describe places/numbers here..."></textarea>
                 </div>
             </div>
 
             <div class="form-group">
-                <label>17. Social Orientation (Select all that apply)</label>
+                <label>17. Social orientation:</label>
                 <div class="options-group grid-2">
                     <div>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Creation"> Creation and creative exploration</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Nature"> Contact with nature and sustainable practices</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Community"> Exchange with local communities</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Managers"> Oriented to managers and organizations</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Intersections"> Intersections between arts and other disciplines</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Creation and creative exploration"> Creation and creative exploration</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Contact with nature and sustainable practices"> Contact with nature and sustainable practices</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Exchange with local communities"> Exchange with local communities</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Oriented to managers and organizations"> Oriented to managers and organizations</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Intersections between arts and other disciplines"> Intersections between arts and other disciplines</label>
                         <label class="checkbox-label"><input type="checkbox" name="orientation" value="Multiculturality"> Multiculturality</label>
                     </div>
                     <div>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Technical"> Technical support</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Governance"> Governance - public policy</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Exchange"> Multicultural exchange</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Care"> Care practices for families</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Education"> Education / Training</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Technical support"> Technical support</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Governance - public policy"> Governance - public policy</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Multicultural exchange"> Multicultural exchange</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Care practices for families"> Care practices for families</label>
+                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Education / Training"> Education / Training</label>
                     </div>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
-                    <label>18. Scale</label>
+                    <label>18. Scale:</label>
                     <div class="options-group">
                         <label class="checkbox-label"><input type="checkbox" name="scale" value="Individual"> Individual</label>
-                        <label class="checkbox-label"><input type="checkbox" name="scale" value="Group"> Group / Collective / Family</label>
-                        <label class="checkbox-label"><input type="checkbox" name="scale" value="Established"> Stablished company / Organization</label>
+                        <label class="checkbox-label"><input type="checkbox" name="scale" value="Group / Collective / Family"> Group / Collective / Family</label>
+                        <label class="checkbox-label"><input type="checkbox" name="scale" value="Established company / Organization"> Established company / Organization</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>19. Genre / Discipline</label>
+                    <label>19. Genre / Discipline:</label>
                     <div class="options-group grid-2">
                         <label class="checkbox-label"><input type="checkbox" name="genre" value="Theatre"> Theatre</label>
                         <label class="checkbox-label"><input type="checkbox" name="genre" value="Dance"> Dance</label>
                         <label class="checkbox-label"><input type="checkbox" name="genre" value="Circus"> Circus</label>
-                        <label class="checkbox-label"><input type="checkbox" name="genre" value="Puppets"> Puppets / Objects</label>
+                        <label class="checkbox-label"><input type="checkbox" name="genre" value="Puppets / Objects"> Puppets / Objects</label>
                         <label class="checkbox-label"><input type="checkbox" name="genre" value="Performance"> Performance</label>
                         <label class="checkbox-label"><input type="checkbox" name="genre" value="Interdisciplinary"> Interdisciplinary</label>
                     </div>
@@ -671,9 +673,26 @@
 <script>
   const form = document.querySelector('form');
   form.onsubmit = function(event) {
+      // If the action URL hasn't been set, download the data as a backup text file
+      if (form.action.includes("YOUR_GOOGLE_APPS_SCRIPT_URL_HERE")) {
+          event.preventDefault();
+          alert('Note: Google Sheets URL is not connected yet. Downloading answers as a backup file...');
+          
+          const formData = new FormData(form);
+          let dataText = "--- SOCIAL ECOSYSTEM OF RESIDENCIES MATRIX RESPONSES ---\n\n";
+          for (let [key, value] of formData.entries()) {
+              dataText += `${key}: ${value}\n`;
+          }
+          const blob = new Blob([dataText], { type: 'text/plain' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = 'residency_matrix_responses.txt';
+          link.click();
+          return;
+      }
+
       event.preventDefault(); 
       const btn = form.querySelector('.btn');
-      
       btn.innerText = "Saving responses...";
       btn.disabled = true;
       
@@ -694,6 +713,7 @@
           btn.innerText = "Save & Complete Matrix";
       });
   };
+</script>
 
 </body>
 </html>
