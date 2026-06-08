@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Ecosystem of Residencies Matrix - Design Template</title>
+    <title>Social Ecosystem of Residencies Matrix - Premium Design Template</title>
     <style>
         :root {
-            --primary-color: #0f766e;
-            --primary-light: #ccfbf1;
-            --secondary-color: #1e293b;
-            --bg-color: #f8fafc;
+            --primary-color: #115e59;
+            --primary-hover: #134e4a;
+            --primary-light: #f0fdfa;
+            --secondary-color: #0f172a;
+            --bg-color: #f1f5f9;
             --card-bg: #ffffff;
-            --border-color: #e2e8f0;
+            --border-color: #cbd5e1;
             --text-color: #334155;
-            --accent-color: #f59e0b;
+            --text-muted: #64748b;
+            --accent-color: #b45309;
+            --accent-light: #fef3c7;
         }
 
         * {
@@ -27,107 +30,153 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1040px;
             margin: 0 auto;
         }
 
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e293b 100%);
             color: white;
-            padding: 35px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 45px 40px;
+            border-radius: 16px;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(17,94,89,0.2) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         header h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.75px;
+            color: #f8fafc;
         }
 
         header p {
             font-size: 15px;
-            opacity: 0.9;
+            opacity: 0.85;
+            max-width: 700px;
         }
 
         .instructions-panel {
-            background-color: #f0fdfa;
-            border-left: 4px solid var(--primary-color);
-            padding: 15px 20px;
-            margin-bottom: 30px;
-            border-radius: 0 8px 8px 0;
+            background-color: var(--accent-light);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin-bottom: 35px;
+            border-radius: 8px;
             font-size: 14px;
+            color: #78350f;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .instructions-panel strong {
-            color: var(--primary-color);
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 4px;
         }
 
         .card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
         }
 
         .card-title {
-            font-size: 18px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-            font-weight: 700;
+            font-size: 20px;
+            color: var(--secondary-color);
+            font-weight: 800;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-title::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 22px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 6px;
             color: var(--secondary-color);
             font-size: 14px;
         }
 
         .form-group .help-text {
-            font-size: 12px;
-            color: #64748b;
-            margin-bottom: 8px;
-            font-style: italic;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            background-color: #f8fafc;
+            padding: 10px 14px;
+            border-left: 3px solid var(--border-color);
+            border-radius: 4px;
         }
 
         input[type="text"], textarea, select {
             width: 100%;
-            padding: 10px 12px;
+            padding: 12px 16px;
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             font-family: inherit;
             font-size: 14px;
             color: var(--text-color);
             background-color: #fff;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
 
         input[type="text"]:focus, textarea:focus, select:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+            box-shadow: 0 0 0 3px rgba(17, 94, 89, 0.15);
+            background-color: #fff;
         }
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+            gap: 25px;
         }
 
         .grid-3 {
@@ -136,106 +185,150 @@
             gap: 15px;
         }
 
-        .options-group {
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
             background-color: #f8fafc;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
         }
 
-        .checkbox-label, .radio-label {
+        .checkbox-card, .radio-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 14px;
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin-bottom: 8px;
-            font-size: 14px;
             cursor: pointer;
+            transition: all 0.15s;
+            font-size: 14px;
             font-weight: 500;
+            color: var(--text-color);
         }
 
-        .checkbox-label input, .radio-label input {
+        .checkbox-card:hover, .radio-card:hover {
+            border-color: var(--primary-color);
+            background-color: var(--primary-light);
+        }
+
+        .checkbox-card input, .radio-card input {
             margin-top: 4px;
+            accent-color: var(--primary-color);
+            width: 16px;
+            height: 16px;
         }
 
-        .model-key-container {
+        .model-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 12px;
             margin-top: 15px;
         }
 
-        .model-option {
-            border: 1px solid var(--border-color);
-            padding: 12px;
-            border-radius: 8px;
+        .model-card-item {
+            border: 1px solid #e2e8f0;
+            padding: 16px;
+            border-radius: 10px;
             background-color: #fff;
             transition: all 0.2s;
+            cursor: pointer;
         }
 
-        .model-option:hover {
+        .model-card-item:hover {
             border-color: var(--primary-color);
-            background-color: #f0fdfa;
+            background-color: var(--primary-light);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
-        .model-badge {
+        .model-tag {
             background-color: var(--primary-color);
             color: white;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-right: 6px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            margin-right: 10px;
             display: inline-block;
         }
 
-        .range-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f1f5f9;
-            padding: 10px 20px;
-            border-radius: 8px;
+        .range-slider-box {
+            background: #f8fafc;
+            padding: 20px 25px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
             margin-top: 10px;
         }
 
-        .range-item {
+        .range-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .range-option {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .range-option input {
+            accent-color: var(--primary-color);
+            width: 18px;
+            height: 18px;
         }
 
         .submit-bar {
             text-align: right;
-            margin-top: 20px;
-            margin-bottom: 40px;
+            margin-top: 30px;
+            margin-bottom: 50px;
         }
 
-        .btn {
+        .btn-submit {
             background-color: var(--primary-color);
             color: white;
-            padding: 12px 30px;
+            padding: 15px 40px;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: background 0.2s;
+            box-shadow: 0 4px 14px rgba(17, 94, 89, 0.3);
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .btn:hover {
-            background-color: #0d5f58;
+        .btn-submit:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(17, 94, 89, 0.4);
         }
 
-        @media (max-width: 600px) {
+        .btn-submit:disabled {
+            background-color: var(--border-color);
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        @media (max-width: 768px) {
             .grid-2, .grid-3 {
                 grid-template-columns: 1fr;
             }
             body {
-                padding: 15px 10px;
+                padding: 20px 10px;
+            }
+            .card {
+                padding: 20px;
             }
         }
     </style>
@@ -243,16 +336,17 @@
 <body>
 
 <div class="container">
-    <!-- REPLACE THE URL INSIDE action="" WITH YOUR GOOGLE APPS SCRIPT WEB APP URL -->
-    <form action="https://script.google.com/macros/s/AKfycbxcH45Dwq0ZwDkUi_vyEBcgMQczD75OioA1u6QHWyaPbGO-XnuB2WB2OLtA5b_c0jXz/exec" method="POST">
+    <!-- CONNECT THE LINK BY REPLACING THE action CONTENT WITH YOUR ACTUAL GOOGLE APPS SCRIPT URL -->
+    <form action="YOUR_GOOGLE_APPS_SCRIPT_URL_HERE" method="POST">
         
         <header>
             <h1>Social Ecosystem of Residencies Matrix</h1>
-            <p>Residency Design Template</p>
+            <p>Residency Design Template — Complete Interactive Workspace</p>
         </header>
 
         <div class="instructions-panel">
-            <strong>INSTRUCTIONS:</strong> Download or make a copy of this file before you start. Fill in the blanks and select the options that apply.
+            <strong>Instructions:</strong><br>
+            Download or make a copy of this file before you start. Fill in the blanks and select from the checkboxes or radio options the ones that apply to your residency structure.
         </div>
 
         <!-- SECTION 1: GENERAL INFORMATION -->
@@ -271,65 +365,65 @@
 
             <div class="form-group" style="margin-top: 15px;">
                 <label>Model Key (Select one):</label>
-                <div class="model-key-container">
-                    <div class="model-option">
-                        <label class="radio-label">
+                <div class="model-grid">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M1">
-                            <span><span class="model-badge">M1</span>Completely based on supporting creation and creative exploration (with a final production as a result)</span>
+                            <span><span class="model-badge model-tag">M1</span>Completely based on supporting creation and creative exploration (with a final production as a result)</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M2">
-                            <span><span class="model-badge">M2</span>Focused on contact with nature and the development of sustainable practices</span>
+                            <span><span class="model-badge model-tag">M2</span>Focused on contact with nature and the development of sustainable practices</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M3">
-                            <span><span class="model-badge">M3</span>Focused on exchange with local communities</span>
+                            <span><span class="model-badge model-tag">M3</span>Focused on exchange with local communities</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M4">
-                            <span><span class="model-badge">M4</span>Oriented to managers and organizations</span>
+                            <span><span class="model-badge model-tag">M4</span>Oriented to managers and organizations</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M5">
-                            <span><span class="model-badge">M5</span>Based on care practices for families</span>
+                            <span><span class="model-badge model-tag">M5</span>Based on care practices for families</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M6">
-                            <span><span class="model-badge">M6</span>Educational-training</span>
+                            <span><span class="model-badge model-tag">M6</span>Educational-training</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M7">
-                            <span><span class="model-badge">M7</span>Governance - public policy</span>
+                            <span><span class="model-badge model-tag">M7</span>Governance - public policy</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M8">
-                            <span><span class="model-badge">M8</span>Multicultural exchange</span>
+                            <span><span class="model-badge model-tag">M8</span>Multicultural exchange</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M9">
-                            <span><span class="model-badge">M9</span>Technical support</span>
+                            <span><span class="model-badge model-tag">M9</span>Technical support</span>
                         </label>
                     </div>
-                    <div class="model-option">
-                        <label class="radio-label">
+                    <div class="model-card-item">
+                        <label class="radio-label checkbox-card" style="background:transparent; border:none; padding:0;">
                             <input type="radio" name="model_key" value="M10">
-                            <span><span class="model-badge">M10</span>Intersections between arts and other disciplines (e.g., science, technology, gastronomy)</span>
+                            <span><span class="model-badge model-tag">M10</span>Intersections between arts and other disciplines (e.g., science, technology, gastronomy)</span>
                         </label>
                     </div>
                 </div>
@@ -349,58 +443,54 @@
             <div class="form-group">
                 <label for="program_strategies">Describe the specific strategies and actions [select those that apply from the file] that will be implemented to fulfill the purpose of this program:</label>
                 <div class="help-text">Use the prompt guide presented in the matrix file to develop this section.</div>
-                <textarea id="program_strategies" name="program_strategies" rows="3" placeholder="Type strategies and actions here..."></textarea>
+                <textarea id="program_strategies" name="program_strategies" rows="3" placeholder="Type specific strategies and actions here..."></textarea>
             </div>
 
             <div class="form-group">
                 <label for="commitments">Commitments on accessibility, cohesion and inclusion:</label>
                 <div class="help-text">To achieve our commitment to include 30% of people from vulnerable groups, we will implement the following internal policies [detail at least 4 policies to be implemented and specify the target groups]. We also commit to adapting our facilities as follows [name at least 3 and specify] and producing educational materials, guides, and translations in the following formats [name at least 3 and specify].</div>
-                <textarea id="commitments" name="commitments" rows="4" placeholder="Type your commitments and inclusion policies here..."></textarea>
+                <textarea id="commitments" name="commitments" rows="4" placeholder="Type your accessibility commitments and internal policies here..."></textarea>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
                     <label>1. Funding scheme:</label>
-                    <div class="options-group grid-3">
-                        <label class="checkbox-label"><input type="checkbox" name="funding" value="Public"> Public</label>
-                        <label class="checkbox-label"><input type="checkbox" name="funding" value="Private"> Private</label>
-                        <label class="checkbox-label"><input type="checkbox" name="funding" value="Mixed"> Mixed</label>
-                        <label class="checkbox-label"><input type="checkbox" name="funding" value="EU"> EU</label>
-                        <label class="checkbox-label"><input type="checkbox" name="funding" value="Self-funded"> Self-funded</label>
+                    <div class="options-container grid-3" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="funding" value="Public"> Public</label>
+                        <label class="checkbox-card"><input type="checkbox" name="funding" value="Private"> Private</label>
+                        <label class="checkbox-card"><input type="checkbox" name="funding" value="Mixed"> Mixed</label>
+                        <label class="checkbox-card"><input type="checkbox" name="funding" value="EU"> EU</label>
+                        <label class="checkbox-card"><input type="checkbox" name="funding" value="Self-funded"> Self-funded</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="budget">Budget:</label>
-                    <input type="text" id="budget" name="budget" placeholder="Specify currency and budget details...">
+                    <input type="text" id="budget" name="budget" placeholder="Type currency and total budget scale...">
                 </div>
             </div>
 
             <div class="form-group">
                 <label>2. Objectives (select maximum 3):</label>
-                <div class="options-group grid-2">
-                    <div>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Research / Exploration"> Research / Exploration</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Artistic Creation"> Artistic Creation</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Production"> Production</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Networking"> Networking</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Social impact"> Social impact</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Evaluation"> Evaluation</label>
-                    </div>
-                    <div>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Production and publication of materials"> Production and publication of educational and support materials</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Education & training"> Education & training</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Cultural exchange"> Cultural exchange</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Contact with nature & sustainability"> Contact with nature & sustainability practices</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Methodologies / tools development"> Methodologies / tools development</label>
-                        <label class="checkbox-label"><input type="checkbox" name="objectives" value="Policy analysis & design"> Policy analysis & design</label>
-                    </div>
+                <div class="options-container" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Research / Exploration"> Research / Exploration</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Artistic Creation"> Artistic Creation</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Production"> Production</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Networking"> Networking</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Social impact"> Social impact</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Evaluation"> Evaluation</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Production and publication of educational materials"> Production and publication of educational and support materials</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Education & training"> Education & training</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Cultural exchange"> Cultural exchange</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Contact with nature & sustainability practices"> Contact with nature & sustainability practices</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Methodologies / tools development"> Methodologies / tools development</label>
+                    <label class="checkbox-card"><input type="checkbox" name="objectives" value="Policy analysis & design"> Policy analysis & design</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="objectives_description">Describe main objectives and goals:</label>
                 <div class="help-text">Describe the main and secondary objectives that you wish to achieve with this residency program and what is the result and/or product to be developed.</div>
-                <textarea id="objectives_description" name="objectives_description" rows="3" placeholder="Type objectives and outcomes details here..."></textarea>
+                <textarea id="objectives_description" name="objectives_description" rows="3" placeholder="Type core objectives and expected results here..."></textarea>
             </div>
         </div>
 
@@ -411,19 +501,19 @@
             <div class="grid-2">
                 <div class="form-group">
                     <label>3. Artistic phase supported:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="phase" value="Research"> Research</label>
-                        <label class="checkbox-label"><input type="checkbox" name="phase" value="Development"> Development</label>
-                        <label class="checkbox-label"><input type="checkbox" name="phase" value="Production"> Production</label>
-                        <label class="checkbox-label"><input type="checkbox" name="phase" value="Other"> Other</label>
+                    <div class="options-container grid-2" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="phase" value="Research"> Research</label>
+                        <label class="checkbox-card"><input type="checkbox" name="phase" value="Development"> Development</label>
+                        <label class="checkbox-card"><input type="checkbox" name="phase" value="Production"> Production</label>
+                        <label class="checkbox-card"><input type="checkbox" name="phase" value="Other"> Other</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>4. Experience of residents:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="experience" value="First-time"> First-time</label>
-                        <label class="checkbox-label"><input type="checkbox" name="experience" value="Experienced"> Experienced</label>
+                    <div class="options-container grid-2" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="experience" value="First-time"> First-time</label>
+                        <label class="checkbox-card"><input type="checkbox" name="experience" value="Experienced"> Experienced</label>
                     </div>
                 </div>
             </div>
@@ -431,68 +521,70 @@
             <div class="grid-2">
                 <div class="form-group">
                     <label>5. Duration:</label>
-                    <div class="options-group grid-3">
-                        <label class="radio-label"><input type="radio" name="duration_type" value="Short"> Short</label>
-                        <label class="radio-label"><input type="radio" name="duration_type" value="Medium"> Medium</label>
-                        <label class="radio-label"><input type="radio" name="duration_type" value="Long-term"> Long-term</label>
+                    <div class="options-container grid-3" style="padding: 12px;">
+                        <label class="radio-card"><input type="radio" name="duration_type" value="Short"> Short</label>
+                        <label class="radio-card"><input type="radio" name="duration_type" value="Medium"> Medium</label>
+                        <label class="radio-card"><input type="radio" name="duration_type" value="Long-term"> Long-term</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="duration_detail">Duration in weeks/days:</label>
                     <div class="help-text">According of the model and purpose, suitable for meeting the program objectives.</div>
-                    <input type="text" id="duration_detail" name="duration_detail" placeholder="e.g., 3 weeks, 2 months...">
+                    <input type="text" id="duration_detail" name="duration_detail" placeholder="e.g. 4 weeks, 6 months...">
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
                     <label>6. Geographical context:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="geo" value="Urban"> Urban</label>
-                        <label class="checkbox-label"><input type="checkbox" name="geo" value="Rural"> Rural</label>
-                        <label class="checkbox-label"><input type="checkbox" name="geo" value="Peripheral"> Peripheral</label>
-                        <label class="checkbox-label"><input type="checkbox" name="geo" value="Multi-site"> Multi-site</label>
+                    <div class="options-container grid-2" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="geo" value="Urban"> Urban</label>
+                        <label class="checkbox-card"><input type="checkbox" name="geo" value="Rural"> Rural</label>
+                        <label class="checkbox-card"><input type="checkbox" name="geo" value="Peripheral"> Peripheral</label>
+                        <label class="checkbox-card"><input type="checkbox" name="geo" value="Multi-site"> Multi-site</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="geo_detail">Briefly describe location, territory and geographical context:</label>
                     <div class="help-text">Describe the territory, surroundings, neighborhood and social context.</div>
-                    <textarea id="geo_detail" name="geo_detail" rows="2" placeholder="Type territory and neighborhood context here..."></textarea>
+                    <textarea id="geo_detail" name="geo_detail" rows="2" placeholder="Describe environmental and community context..."></textarea>
                 </div>
             </div>
 
             <div class="form-group">
                 <label>7. Relation to territory/community (0 none → 5 co-creation):</label>
-                <div class="range-container">
-                    <label class="radio-label range-item"><input type="radio" name="community_rel" value="0"><span>0 (None)</span></label>
-                    <label class="radio-label range-item"><input type="radio" name="community_rel" value="1"><span>1</span></label>
-                    <label class="radio-label range-item"><input type="radio" name="community_rel" value="2"><span>2</span></label>
-                    <label class="radio-label range-item"><input type="radio" name="community_rel" value="3"><span>3</span></label>
-                    <label class="radio-label range-item"><input type="radio" name="community_rel" value="4"><span>4</span></label>
-                    <label class="radio-label range-item"><input type="radio" name="community_rel" value="5"><span>5 (Co-creation)</span></label>
+                <div class="range-slider-box">
+                    <div class="range-flex">
+                        <label class="range-option"><input type="radio" name="community_rel" value="0"><span>0 (None)</span></label>
+                        <label class="range-option"><input type="radio" name="community_rel" value="1"><span>1</span></label>
+                        <label class="range-option"><input type="radio" name="community_rel" value="2"><span>2</span></label>
+                        <label class="range-option"><input type="radio" name="community_rel" value="3"><span>3</span></label>
+                        <label class="range-option"><input type="radio" name="community_rel" value="4"><span>4</span></label>
+                        <label class="range-option"><input type="radio" name="community_rel" value="5"><span>5 (Co-creation)</span></label>
+                    </div>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="community_detail">Describe:</label>
                 <div class="help-text">Describe how this residency promotes and applies contact and exchange with the local community and territory.</div>
-                <textarea id="community_detail" name="community_detail" rows="2" placeholder="Type community exchange description here..."></textarea>
+                <textarea id="community_detail" name="community_detail" rows="2" placeholder="Describe relationship, activities or exchange with local groups..."></textarea>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
                     <label>8. Selection model:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="selection" value="Open call"> Open call</label>
-                        <label class="checkbox-label"><input type="checkbox" name="selection" value="Invitation"> Invitation</label>
-                        <label class="checkbox-label"><input type="checkbox" name="selection" value="Curated"> Curated</label>
-                        <label class="checkbox-label"><input type="checkbox" name="selection" value="Other"> Other</label>
+                    <div class="options-container grid-2" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="selection" value="Open call"> Open call</label>
+                        <label class="checkbox-card"><input type="checkbox" name="selection" value="Invitation"> Invitation</label>
+                        <label class="checkbox-card"><input type="checkbox" name="selection" value="Curated"> Curated</label>
+                        <label class="checkbox-card"><input type="checkbox" name="selection" value="Other"> Other</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="selection_criteria">Criteria:</label>
                     <div class="help-text">What are the criteria used to select residents and how do these relate to achieving the main objective?</div>
-                    <textarea id="selection_criteria" name="selection_criteria" rows="2" placeholder="Type core selection criteria here..."></textarea>
+                    <textarea id="selection_criteria" name="selection_criteria" rows="2" placeholder="Type evaluation and selection criteria..."></textarea>
                 </div>
             </div>
         </div>
@@ -504,22 +596,22 @@
             <div class="grid-2">
                 <div class="form-group">
                     <label>9. Target participants (when professionals):</label>
-                    <div class="options-group">
-                        <label class="checkbox-label"><input type="checkbox" name="profile" value="Emerging"> Emerging</label>
-                        <label class="checkbox-label"><input type="checkbox" name="profile" value="Mid-career"> Mid-career</label>
-                        <label class="checkbox-label"><input type="checkbox" name="profile" value="Established"> Established and senior practitioner</label>
+                    <div class="options-container" style="grid-template-columns: 1fr;">
+                        <label class="checkbox-card"><input type="checkbox" name="profile" value="Emerging"> Emerging</label>
+                        <label class="checkbox-card"><input type="checkbox" name="profile" value="Mid-career"> Mid-career</label>
+                        <label class="checkbox-card"><input type="checkbox" name="profile" value="Established and senior practitioner"> Established and senior practitioner</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>10. Target participants (for age range):</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="age" value="Children"> Children</label>
-                        <label class="checkbox-label"><input type="checkbox" name="age" value="Adolescents"> Adolescents</label>
-                        <label class="checkbox-label"><input type="checkbox" name="age" value="Youth"> Youth</label>
-                        <label class="checkbox-label"><input type="checkbox" name="age" value="Adults"> Adults</label>
-                        <label class="checkbox-label"><input type="checkbox" name="age" value="Elderly people"> Elderly people</label>
-                        <label class="checkbox-label"><input type="checkbox" name="age" value="Inter-generational"> Inter-generational</label>
+                    <div class="options-container grid-2">
+                        <label class="checkbox-card"><input type="checkbox" name="age" value="Children"> Children</label>
+                        <label class="checkbox-card"><input type="checkbox" name="age" value="Adolescents"> Adolescents</label>
+                        <label class="checkbox-card"><input type="checkbox" name="age" value="Youth"> Youth</label>
+                        <label class="checkbox-card"><input type="checkbox" name="age" value="Adults"> Adults</label>
+                        <label class="checkbox-card"><input type="checkbox" name="age" value="Elderly people"> Elderly people</label>
+                        <label class="checkbox-card"><input type="checkbox" name="age" value="Inter-generational"> Inter-generational</label>
                     </div>
                 </div>
             </div>
@@ -527,80 +619,80 @@
             <div class="grid-2">
                 <div class="form-group">
                     <label>11. Target participants (specific communities):</label>
-                    <div class="options-group">
-                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Indigenous & first nations"> Indigenous & first nations</label>
-                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Farmers"> Farmers</label>
-                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Physical disabilities"> Physical disabilities</label>
-                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Gender and sexual diversities"> Gender and sexual diversities</label>
-                        <label class="checkbox-label"><input type="checkbox" name="communities" value="Neurodiversities"> Neurodiversities</label>
+                    <div class="options-container" style="grid-template-columns: 1fr;">
+                        <label class="checkbox-card"><input type="checkbox" name="communities" value="Indigenous & first nations"> Indigenous & first nations</label>
+                        <label class="checkbox-card"><input type="checkbox" name="communities" value="Farmers"> Farmers</label>
+                        <label class="checkbox-card"><input type="checkbox" name="communities" value="Physical disabilities"> Physical disabilities</label>
+                        <label class="checkbox-card"><input type="checkbox" name="communities" value="Gender and sexual diversities"> Gender and sexual diversities</label>
+                        <label class="checkbox-card"><input type="checkbox" name="communities" value="Neurodiversities"> Neurodiversities</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="other_participants">12. Other targeted participants:</label>
                     <div class="help-text">Specify if this residency program is aimed at other specific communities.</div>
-                    <textarea id="other_participants" name="other_participants" rows="3" placeholder="List any other target communities here..."></textarea>
+                    <textarea id="other_participants" name="other_participants" rows="4" placeholder="Type other targeted groups if applicable..."></textarea>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 5: INFRASTRUCTURE, LOGISTICS & DIMENSIONS -->
+        <!-- SECTION 5: INFRASTRUCTURE, LOGISTICS & SCOPE -->
         <div class="card">
             <div class="card-title">SECTION 5: Infrastructure, Logistics & Scope</div>
             
             <div class="grid-2">
                 <div class="form-group">
                     <label>13. Infrastructure provided:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Studios / Rehearsal room"> Studios / Rehearsal room</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Kitchen / Laundry"> Kitchen / Laundry</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Housing / Accomodation"> Housing / Accommodation</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Office"> Office</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Technical support"> Technical support</label>
-                        <label class="checkbox-label"><input type="checkbox" name="infra" value="Outdoor spaces"> Outdoor spaces</label>
+                    <div class="options-container grid-2">
+                        <label class="checkbox-card"><input type="checkbox" name="infra" value="Studios / Rehearsal room"> Studios / Rehearsal room</label>
+                        <label class="checkbox-card"><input type="checkbox" name="infra" value="Kitchen / Laundry"> Kitchen / Laundry</label>
+                        <label class="checkbox-card"><input type="checkbox" name="infra" value="Housing / Accomodation"> Housing / Accommodation</label>
+                        <label class="checkbox-card"><input type="checkbox" name="infra" value="Office"> Office</label>
+                        <label class="checkbox-card"><input type="checkbox" name="infra" value="Technical support"> Technical support</label>
+                        <label class="checkbox-card"><input type="checkbox" name="infra" value="Outdoor spaces"> Outdoor spaces</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="spaces_detail">Description of spaces (specifications):</label>
                     <div class="help-text">Describe spaces and their accessibility (cohesion) adaptation, also if they are children safe and other important specifications.</div>
-                    <textarea id="spaces_detail" name="spaces_detail" rows="4" placeholder="Type spatial technicalities and safety elements here..."></textarea>
+                    <textarea id="spaces_detail" name="spaces_detail" rows="4" placeholder="Type space dimensions, accessibility metrics, and features..."></textarea>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
                     <label>14. Financial conditions:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="finance" value="Fees"> Fees</label>
-                        <label class="checkbox-label"><input type="checkbox" name="finance" value="Grants"> Grants</label>
-                        <label class="checkbox-label"><input type="checkbox" name="finance" value="Per diem"> Per diem</label>
-                        <label class="checkbox-label"><input type="checkbox" name="finance" value="No funding"> No funding</label>
-                        <label class="checkbox-label"><input type="checkbox" name="finance" value="Others"> Others</label>
+                    <div class="options-container grid-2" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="finance" value="Fees"> Fees</label>
+                        <label class="checkbox-card"><input type="checkbox" name="finance" value="Grants"> Grants</label>
+                        <label class="checkbox-card"><input type="checkbox" name="finance" value="Per diem"> Per diem</label>
+                        <label class="checkbox-card"><input type="checkbox" name="finance" value="No funding"> No funding</label>
+                        <label class="checkbox-card"><input type="checkbox" name="finance" value="Others"> Others</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="amounts_detail">Amounts:</label>
-                    <input type="text" id="amounts_detail" name="amounts_detail" placeholder="Specify amounts, stypends, allocations...">
+                    <input type="text" id="amounts_detail" name="amounts_detail" placeholder="Type detailed stipends or financial allocations...">
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
                     <label>15. Output requirements:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="outputs" value="None"> None</label>
-                        <label class="checkbox-label"><input type="checkbox" name="outputs" value="Work in progress / Open studio"> Work in progress / Open studio</label>
-                        <label class="checkbox-label"><input type="checkbox" name="outputs" value="Performance"> Performance</label>
-                        <label class="checkbox-label"><input type="checkbox" name="outputs" value="Workshop"> Workshop</label>
-                        <label class="checkbox-label"><input type="checkbox" name="outputs" value="Others"> Others</label>
+                    <div class="options-container grid-2" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="outputs" value="None"> None</label>
+                        <label class="checkbox-card"><input type="checkbox" name="outputs" value="Work in progress / Open studio"> Work in progress / Open studio</label>
+                        <label class="checkbox-card"><input type="checkbox" name="outputs" value="Performance"> Performance</label>
+                        <label class="checkbox-card"><input type="checkbox" name="outputs" value="Workshop"> Workshop</label>
+                        <label class="checkbox-card"><input type="checkbox" name="outputs" value="Others"> Others</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>16. Network dimension:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="network" value="Single host"> Single host</label>
-                        <label class="checkbox-label"><input type="checkbox" name="network" value="Multi host"> Multi host</label>
-                        <label class="checkbox-label"><input type="checkbox" name="network" value="Festival"> Festival</label>
-                        <label class="checkbox-label"><input type="checkbox" name="network" value="International"> International</label>
+                    <div class="options-container grid-2" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="network" value="Single host"> Single host</label>
+                        <label class="checkbox-card"><input type="checkbox" name="network" value="Multi host"> Multi host</label>
+                        <label class="checkbox-card"><input type="checkbox" name="network" value="Festival"> Festival</label>
+                        <label class="checkbox-card"><input type="checkbox" name="network" value="International"> International</label>
                     </div>
                 </div>
             </div>
@@ -608,64 +700,60 @@
             <div class="grid-2">
                 <div class="form-group">
                     <label for="hosts_name">Name hosts:</label>
-                    <input type="text" id="hosts_name" name="hosts_name" placeholder="List partner hosts or single host names...">
+                    <input type="text" id="hosts_name" name="hosts_name" placeholder="Type co-hosts or primary host details...">
                 </div>
                 <div class="form-group">
                     <label>Number of countries, cities, regions, places involved:</label>
-                    <div class="options-group grid-3">
-                        <label class="checkbox-label"><input type="checkbox" name="scope" value="International"> International</label>
-                        <label class="checkbox-label"><input type="checkbox" name="scope" value="National"> National</label>
-                        <label class="checkbox-label"><input type="checkbox" name="scope" value="Local"> Local</label>
+                    <div class="options-container grid-3" style="padding: 12px;">
+                        <label class="checkbox-card"><input type="checkbox" name="scope" value="International"> International</label>
+                        <label class="checkbox-card"><input type="checkbox" name="scope" value="National"> National</label>
+                        <label class="checkbox-card"><input type="checkbox" name="scope" value="Local"> Local</label>
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label>17. Social orientation:</label>
-                <div class="options-group grid-2">
-                    <div>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Creation and creative exploration"> Creation and creative exploration</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Contact with nature and sustainable practices"> Contact with nature and sustainable practices</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Exchange with local communities"> Exchange with local communities</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Oriented to managers and organizations"> Oriented to managers and organizations</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Intersections between arts and other disciplines"> Intersections between arts and other disciplines</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Multiculturality"> Multiculturality</label>
-                    </div>
-                    <div>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Technical support"> Technical support</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Governance - public policy"> Governance - public policy</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Multicultural exchange"> Multicultural exchange</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Care practices for families"> Care practices for families</label>
-                        <label class="checkbox-label"><input type="checkbox" name="orientation" value="Education / Training"> Education / Training</label>
-                    </div>
+                <label>17. Social orientation (Select all that apply):</label>
+                <div class="options-container grid-2">
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Creation and creative exploration"> Creation and creative exploration</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Contact with nature and sustainable practices"> Contact with nature and sustainable practices</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Exchange with local communities"> Exchange with local communities</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Oriented to managers and organizations"> Oriented to managers and organizations</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Intersections between arts and other disciplines"> Intersections between arts and other disciplines</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Multiculturality"> Multiculturality</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Technical support"> Technical support</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Governance - public policy"> Governance - public policy</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Multicultural exchange"> Multicultural exchange</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Care practices for families"> Care practices for families</label>
+                    <label class="checkbox-card"><input type="checkbox" name="orientation" value="Education / Training"> Education / Training</label>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="form-group">
                     <label>18. Scale:</label>
-                    <div class="options-group">
-                        <label class="checkbox-label"><input type="checkbox" name="scale" value="Individual"> Individual</label>
-                        <label class="checkbox-label"><input type="checkbox" name="scale" value="Group / Collective / Family"> Group / Collective / Family</label>
-                        <label class="checkbox-label"><input type="checkbox" name="scale" value="Established company / Organization"> Established company / Organization</label>
+                    <div class="options-container" style="grid-template-columns: 1fr;">
+                        <label class="checkbox-card"><input type="checkbox" name="scale" value="Individual"> Individual</label>
+                        <label class="checkbox-card"><input type="checkbox" name="scale" value="Group / Collective / Family"> Group / Collective / Family</label>
+                        <label class="checkbox-card"><input type="checkbox" name="scale" value="Established company / Organization"> Established company / Organization</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>19. Genre / Discipline:</label>
-                    <div class="options-group grid-2">
-                        <label class="checkbox-label"><input type="checkbox" name="genre" value="Theatre"> Theatre</label>
-                        <label class="checkbox-label"><input type="checkbox" name="genre" value="Dance"> Dance</label>
-                        <label class="checkbox-label"><input type="checkbox" name="genre" value="Circus"> Circus</label>
-                        <label class="checkbox-label"><input type="checkbox" name="genre" value="Puppets / Objects"> Puppets / Objects</label>
-                        <label class="checkbox-label"><input type="checkbox" name="genre" value="Performance"> Performance</label>
-                        <label class="checkbox-label"><input type="checkbox" name="genre" value="Interdisciplinary"> Interdisciplinary</label>
+                    <div class="options-container grid-2">
+                        <label class="checkbox-card"><input type="checkbox" name="genre" value="Theatre"> Theatre</label>
+                        <label class="checkbox-card"><input type="checkbox" name="genre" value="Dance"> Dance</label>
+                        <label class="checkbox-card"><input type="checkbox" name="genre" value="Circus"> Circus</label>
+                        <label class="checkbox-card"><input type="checkbox" name="genre" value="Puppets / Objects"> Puppets / Objects</label>
+                        <label class="checkbox-card"><input type="checkbox" name="genre" value="Performance"> Performance</label>
+                        <label class="checkbox-card"><input type="checkbox" name="genre" value="Interdisciplinary"> Interdisciplinary</label>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="submit-bar">
-            <button type="submit" class="btn">Save & Complete Matrix</button>
+            <button type="submit" class="btn-submit">Save & Complete Matrix</button>
         </div>
     </form>
 </div>
@@ -673,10 +761,9 @@
 <script>
   const form = document.querySelector('form');
   form.onsubmit = function(event) {
-      // If the action URL hasn't been set, download the data as a backup text file
       if (form.action.includes("YOUR_GOOGLE_APPS_SCRIPT_URL_HERE")) {
           event.preventDefault();
-          alert('Note: Google Sheets URL is not connected yet. Downloading answers as a backup file...');
+          alert('Note: Google Sheets App Script URL is not connected yet. Downloading your responses as a local backup file...');
           
           const formData = new FormData(form);
           let dataText = "--- SOCIAL ECOSYSTEM OF RESIDENCIES MATRIX RESPONSES ---\n\n";
@@ -692,7 +779,7 @@
       }
 
       event.preventDefault(); 
-      const btn = form.querySelector('.btn');
+      const btn = form.querySelector('.btn-submit');
       btn.innerText = "Saving responses...";
       btn.disabled = true;
       
